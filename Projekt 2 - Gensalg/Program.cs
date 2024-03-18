@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Hej gruppe 13 :D");
-            Console.WriteLine("Hej gruppe :D");
+            Console.WriteLine("Jeg har fucked det op");
             Console.ReadLine();
         }
     }
