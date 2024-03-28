@@ -8,5 +8,22 @@ namespace Projekt_2___Gensalg
 {
     internal class Spil
     {
+        // ** TILFØJET HERFRA - CLA
+
+        private string gameName;
+        private string gameVersion;
+        private string gameGenre;
+        private string gameCondition;
+        private int stockAmount;
+        private int numberOfPlayers;
+        private double gamePrice;
+
+        public void PrintInventoryList()
+        {
+
+        }
+
+        // HERTIL - CLA ***
+
     }
 }
