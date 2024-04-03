@@ -1,25 +1,12 @@
-﻿namespace Projekt_2___Gensalg
+﻿using System.Reflection;
+
+namespace Projekt_2___Gensalg
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            {
-                GemFilerne gemFilerne = new GemFilerne();
 
-                // Gemmer dataen
-                List<string> dataAtGemme = new List<string>();
-                gemFilerne.GemData(dataAtGemme, "data.txt");
-
-                // Indlæser vores data håber jeg. Prøver lige og bruge data.txt. først
-                List<string> indlæsteData = gemFilerne.IndlæsData("data.txt");
-
-                // Gør noget med de indlæste data, f.eks. udskriv dem
-                foreach (var element in indlæsteData)
-                {
-                    Console.WriteLine(element);
-                }
-            }
             //her skal selve programmet køres igennem
 
             // ** TILFØJET HERFRA - CLA
@@ -69,8 +56,39 @@
                         lageroversigt.Opretforespørgsel(ForespørgselNavn); // tilføjer vores forespørgsel til vores lager 
                         break;
                     case 6:
+                        {
+                            Console.WriteLine("Gem Data");
+
+                            GemFilerne gemFilerne = new GemFilerne();
+
+                            string txtPath = AppDomain.CurrentDomain.BaseDirectory + "data.txt";
+                            // Gemmer dataen
+                            List<Spil> dataAtGemme = new List<Spil>();
+
+                            dataAtGemme = lageroversigt.RetunerListe();
+
+                            gemFilerne.GemData(dataAtGemme, txtPath);
+
+                        }
+                        break;
+                    case 7:
                         Console.WriteLine("Nu afsluttes programmet");
                         endProgram = true;
+                        break;
+                    case 8:
+                        {
+                            GemFilerne gemFilerne = new GemFilerne();
+
+                            string txtPath = AppDomain.CurrentDomain.BaseDirectory + "data.txt";
+                            // Indlæser vores data håber jeg. Prøver lige og bruge data.txt. først
+                            List<string> indlæsteData = gemFilerne.IndlæsData(txtPath);
+
+                            // Gør noget med de indlæste data, f.eks. udskriv dem
+                            foreach (var element in indlæsteData)
+                            {
+                                lageroversigt.TilføjSpil(new Spil { Navn = element });
+                            }
+                        }
                         break;
                 }
 

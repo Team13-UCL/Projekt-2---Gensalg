@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_2___Gensalg
 {
-    internal class Spil
+    public class Spil
     {
         // ** TILFØJET HERFRA - CLA
 

@@ -21,6 +21,11 @@ namespace Projekt_2___Gensalg
             spilILager.Add(spil); // Tilføj et spil til lageroversigten
         }
 
+        public List<Spil> RetunerListe()
+        {
+            return spilILager;
+        }
+
         public void FjernSpil(Spil spil)
         {
             spilILager.Remove(spil); // Fjern et spil fra lageroversigten

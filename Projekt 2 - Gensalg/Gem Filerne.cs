@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Projekt_2___Gensalg;
 
 public class GemFilerne
 {
 
-    public void GemData(List<string> data, string filnavn)
+    public void GemData(List<Spil> data, string filnavn)
     {
-        using (StreamWriter sw = new StreamWriter(filnavn))
+        using (StreamWriter sw = new StreamWriter(filnavn,false))
         {
             foreach (var element in data)
             {
-                sw.WriteLine(element);
+                sw.WriteLine(element.Navn);
             }
         }
+
     }
 
     public List<string> IndlæsData(string filnavn)
