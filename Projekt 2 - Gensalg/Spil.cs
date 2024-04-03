@@ -17,6 +17,7 @@ namespace Projekt_2___Gensalg
         private int stockAmount;
         private int numberOfPlayers;
         private double gamePrice;
+        public string Navn { get; set; }
 
         public void PrintInventoryList()
         {
