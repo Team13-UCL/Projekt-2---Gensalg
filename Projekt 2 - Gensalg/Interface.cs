@@ -18,16 +18,14 @@ namespace Projekt_2___Gensalg
 
         }
 
-        // ** TILFØJET HERFRA - CLA 
-
         private int chosenFunction; // brugerens valg i menuen registreres i denne int
         private string menuTitle = "Menu for lagersystemet"; // menutitel
         private string askUserChoice = "\n\n\tVælg hvilken funktion, du ønsker at benytte og tryk enter"; // besked til brugeren, når menuen starter
-        private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Vis liste over forespørgsler", "4. Opret spil", "5. Opret forespørgsel", "6. Gem data", "7. Slut Program", "8. Indlæs Data" }; // denne array indeholder menupunkterne
-
+        private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Vis liste over forespørgsler", "4. Opret spil", "5. Rediger spil", "6. Slet spil", "7. Opret forespørgsel", "8. Afslut Program\n" }; // denne array indeholder menupunkterne
 
         public void ShowMenu()
         {
+            Console.Clear();
             Console.WriteLine("\t" + menuTitle);
 
             for (int i = 0; i < menuItems.Length; i++)
@@ -37,11 +35,10 @@ namespace Projekt_2___Gensalg
             Console.WriteLine(askUserChoice);
         }
 
-
         public void RegisterChoice()
         {
             bool correctChoice = false;
-            while (correctChoice == false) // Tjekker om bruger har indtastet et gyldigt tal og fortsætter med at spørge indtil der vælges et gyldigt tal
+            while (!correctChoice) // Tjekker om bruger har indtastet et gyldigt tal og fortsætter med at spørge indtil der vælges et gyldigt tal
             {
                 if (!int.TryParse(Console.ReadLine(), out chosenFunction)) // tjekker om brugers input er andet end et tal og konverterer input string til int hvis input er et tal
                 {
@@ -51,13 +48,8 @@ namespace Projekt_2___Gensalg
                 {
                     WrongChoice();
                 }
-                else { correctChoice = true; } // hvis de 2 forrige conditions er false brugerens input korrekt og dette stopper loopet
+                else { correctChoice = true; } // hvis de 2 forrige conditions er false, er brugerens input korrekt, og dette stopper loopet
             }
-
-            // Console.WriteLine("choice is " + chosenFunction); // kan bruges til at bekræfte at chosenFunction har registreret brugerens input
-
-
-
         }
 
         public void WrongChoice() // fejlbesked til brugeren og genstart af menuen i tilfælde af forkert intastning
@@ -72,8 +64,5 @@ namespace Projekt_2___Gensalg
         {
             return chosenFunction;
         }
-
-        
-            // HERTIL - CLA ***
-        }
+    }
 }
