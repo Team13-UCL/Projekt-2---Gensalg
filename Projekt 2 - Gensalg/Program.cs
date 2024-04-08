@@ -50,7 +50,7 @@ namespace Projekt_2___Gensalg
                         lageroversigt.Opretforespørgsel(); // tilføjer vores forespørgsel til vores lager 
                         break;
                     case 9:
-                        // Rediger forespørgsel
+                        lageroversigt.EditRequest();
                         break;
                     case 10:
                         // DeleteForespørgsel metode
