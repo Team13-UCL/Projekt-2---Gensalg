@@ -53,7 +53,7 @@ namespace Projekt_2___Gensalg
                         lageroversigt.EditRequest();
                         break;
                     case 10:
-                        // DeleteForespørgsel metode
+                        lageroversigt.DeleteRequest();
                         break;
                     case 11:
                         Console.WriteLine("Nu afsluttes programmet");
