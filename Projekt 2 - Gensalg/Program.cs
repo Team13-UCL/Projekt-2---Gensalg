@@ -42,12 +42,18 @@ namespace Projekt_2___Gensalg
                         lageroversigt.VisForespoergsler(); // Viser listen over forespørgelserne
                         break;
                     case 7:
+                        // søg efter forespørgsel
+                        break;                        
+                    case 8:
                         lageroversigt.Opretforespørgsel(); // tilføjer vores forespørgsel til vores lager 
                         break;
-                    case 8:
+                    case 9:
+                        // Rediger forespørgsel
+                        break;
+                    case 10:
                         // DeleteForespørgsel metode
                         break;
-                    case 9:
+                    case 11:
                         Console.WriteLine("Nu afsluttes programmet");
                         endProgram = true;
                         break;

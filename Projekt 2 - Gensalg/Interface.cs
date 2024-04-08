@@ -21,7 +21,7 @@ namespace Projekt_2___Gensalg
         private int chosenFunction; // brugerens valg i menuen registreres i denne int
         private string menuTitle = "Menu for lagersystemet"; // menutitel
         private string askUserChoice = "\n\n\tVælg hvilken funktion, du ønsker at benytte og tryk enter"; // besked til brugeren, når menuen starter
-        private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Opret spil ", "4. Rediger spil", "5. Slet spil", "6. Vis liste over forespørgsler", "7. Opret forespørgsel", "8. Slet forespørgsel", "9. Afslut Program\n" }; // denne array indeholder menupunkterne
+        private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Opret spil ", "4. Rediger spil", "5. Slet spil", "6. Vis liste over forespørgsler", "7. Søg efter forespørgsel", "8. Opret forespørgsel", "9. Rediger forespørgsel", "10. Slet forespørgsel", "11. Afslut Program\n" }; // denne array indeholder menupunkterne
 
         public void ShowMenu()
         {
@@ -44,7 +44,7 @@ namespace Projekt_2___Gensalg
                 {
                     WrongChoice();
                 }
-                else if (chosenFunction < 1 || chosenFunction > 9) // tjekker om bruger input er et tal uden for menuen
+                else if (chosenFunction < 1 || chosenFunction > 11) // tjekker om bruger input er et tal uden for menuen
                 {
                     WrongChoice();
                 }
