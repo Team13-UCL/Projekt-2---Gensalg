@@ -379,7 +379,7 @@ namespace Projekt_2___Gensalg
             List<string> foundLines = new List<string>(); // denne liste bruges til at gemme linjer der indeholder søgeordet
             int j = 0; // bruges til at give et nummer til hver af de linjer der indeholder søgeordet
             bool anyElementFound = false; // fortæller om søgningen har givet nogen resultater
-            bool correctChoice = false; // sikrer, at brugeren træffer et acceptabelt valg
+            bool correctChoice = false; // sikrer, at brugeren træffer et acceptabelt valg 
             
 
             Console.WriteLine("Skriv navnet på den forespørgsel, du ønsker at slette");
