@@ -30,21 +30,24 @@ namespace Projekt_2___Gensalg
                         lageroversigt.SøgEfterSpil(); // Søger efter det søgte navn på vores lagerliste
                         break;
                     case 3:
-                        lageroversigt.VisForespoergsler(); // Viser listen over forespørgelserne
-                        break;
-                    case 4:
                         lageroversigt.TilføjSpil(); // Tilføjer spillet til lageroversigten                            
-                        break;
-                    case 5:
+                        break;                        
+                    case 4:
                         lageroversigt.EditGame();
+                        break;                        
+                    case 5:
+                        lageroversigt.DeleteGame();
                         break;
                     case 6:
-                        lageroversigt.DeleteGame();
+                        lageroversigt.VisForespoergsler(); // Viser listen over forespørgelserne
                         break;
                     case 7:
                         lageroversigt.Opretforespørgsel(); // tilføjer vores forespørgsel til vores lager 
                         break;
                     case 8:
+                        // DeleteForespørgsel metode
+                        break;
+                    case 9:
                         Console.WriteLine("Nu afsluttes programmet");
                         endProgram = true;
                         break;
