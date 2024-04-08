@@ -18,19 +18,7 @@ namespace Projekt_2___Gensalg
         // Metoder til at håndtere lageroversigten
         public void TilføjSpil(Spil spil)
         {
-            string mystring = "games";
             spilILager.Add(spil); // Tilføj et spil til lageroversigten
-            using (StreamWriter outputFile = new StreamWriter("InventoryList.txt"))
-            {
-
-                outputFile.WriteLine(testing());
-
-            }
-        }
-
-        public string testing()
-        {
-            return "my game";
         }
 
         public List<Spil> RetunerListe()
