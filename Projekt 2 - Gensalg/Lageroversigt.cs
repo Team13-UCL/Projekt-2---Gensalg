@@ -20,7 +20,7 @@ namespace Projekt_2___Gensalg
         }
         // Metoder til at håndtere lageroversigten
 
-        public void CreateInventoryOrRequestList(string fileName) // opretter en fil til lagerlisten ***** VIRKER
+        public void CreateInventoryOrRequestList(string fileName) // opretter en fil til lagerlisten 
         {
             string listName = "";
             if (fileName == "InventoryList.txt")
@@ -40,7 +40,7 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public void TilføjSpil() // ***** VIRKER
+        public void TilføjSpil() 
         {
             if (!File.Exists("InventoryList.txt")) // Tjekker om der er oprettet en fil til lagerlisten, og opretter filen hvis den ikke findes i forvejen
             {
@@ -223,7 +223,7 @@ namespace Projekt_2___Gensalg
         {
             spilILager.Remove(spil); // Fjern et spil fra lageroversigten
         }
-        public void VisLageroversigt() // ***** VIRKER
+        public void VisLageroversigt() 
         {
             if (!File.Exists("InventoryList.txt")) // tjekker om lagerlistefilen eksisterer og opretter den hvis ikke den eksisterer, samt giver brugeren besked om at listen er tom
             {
@@ -250,7 +250,7 @@ namespace Projekt_2___Gensalg
         }
 
 
-        public void SøgEfterSpil() // ***** VIRKER
+        public void SøgEfterSpil() 
         {
             if (!File.Exists("InventoryList.txt")) // tjekker om lagerlistefilen ikke eksisterer endnu og opretter den
             {
@@ -290,7 +290,7 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public void Opretforespørgsel() // ***** VIRKER
+        public void Opretforespørgsel() 
         {
 
             if (!File.Exists("RequestList.txt")) // Tjekker om der er oprettet en fil til forespørgselslisten, og opretter filen hvis den ikke findes i forvejen
@@ -314,7 +314,7 @@ namespace Projekt_2___Gensalg
             Console.WriteLine($"\n\nForespørgslen '{myString}' er blevet tilføjet til listen over forespørgsler.\n");
         }
 
-        public void VisForespoergsler() // ***** VIRKER
+        public void VisForespoergsler() 
         {
             if (!File.Exists("RequestList.txt")) // tjekker om forespørgselslistefilen eksisterer og opretter den hvis ikke den eksisterer, samt giver brugeren besked om at listen er tom
             {
@@ -341,6 +341,8 @@ namespace Projekt_2___Gensalg
                 }
             }
         }
+
+
 
         // Metode til at finde et spil i lageroversigten baseret på navn
         public Spil FindSpil(string navn) // ** ikke nødvendig da der er en anden metode til spil søgning?
