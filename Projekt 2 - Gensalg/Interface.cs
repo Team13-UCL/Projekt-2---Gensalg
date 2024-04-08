@@ -8,21 +8,12 @@ namespace Projekt_2___Gensalg
 {
     internal class Interface
     {
-
-        public void visSpilOversigt()
-        {
-
-        }
-        public void searchForGames()
-        {
-
-        }
-
         private int chosenFunction; // brugerens valg i menuen registreres i denne int
         private string menuTitle = "Menu for lagersystemet"; // menutitel
         private string askUserChoice = "\n\n\tVælg hvilken funktion, du ønsker at benytte og tryk enter"; // besked til brugeren, når menuen starter
         private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Opret spil ", "4. Rediger spil", "5. Slet spil", "6. Vis liste over forespørgsler", "7. Søg efter forespørgsel", "8. Opret forespørgsel", "9. Rediger forespørgsel", "10. Slet forespørgsel", "11. Afslut Program\n" }; // denne array indeholder menupunkterne
 
+        
         public void ShowMenu()
         {
             Console.Clear();
@@ -32,9 +23,11 @@ namespace Projekt_2___Gensalg
             {
                 Console.WriteLine("\n\t" + menuItems[i]);
             }
+     
             Console.WriteLine(askUserChoice);
         }
 
+        
         public void RegisterChoice()
         {
             bool correctChoice = false;
@@ -52,6 +45,7 @@ namespace Projekt_2___Gensalg
             }
         }
 
+
         public void WrongChoice() // fejlbesked til brugeren og genstart af menuen i tilfælde af forkert intastning
         {
             Console.WriteLine("\nForkert indtastning. Du skal vælge et tal fra menuen. \n\nTryk på en vilkårlig tast for at fortsætte.");
@@ -60,6 +54,7 @@ namespace Projekt_2___Gensalg
             ShowMenu();
         }
 
+        
         public int GetChosenFunction() // returnerer brugerens input
         {
             return chosenFunction;

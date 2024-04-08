@@ -6,7 +6,6 @@ namespace Projekt_2___Gensalg
     {
         static void Main(string[] args)
         {
-
             bool endProgram = false; // bruges til at tjekke om menu-loopet skal stoppe og programmet afsluttes
 
             Interface menu = new Interface();
