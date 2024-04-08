@@ -13,6 +13,8 @@ namespace Projekt_2___Gensalg
 
             Lageroversigt lageroversigt = new Lageroversigt();
 
+            
+
             while (endProgram == false)
             {
                 menu.ShowMenu(); // viser menuen
@@ -42,7 +44,7 @@ namespace Projekt_2___Gensalg
                         lageroversigt.VisForespoergsler(); // Viser listen over forespørgelserne
                         break;
                     case 7:
-                        // søg efter forespørgsel
+                        lageroversigt.SearchForRequest();
                         break;                        
                     case 8:
                         lageroversigt.Opretforespørgsel(); // tilføjer vores forespørgsel til vores lager 

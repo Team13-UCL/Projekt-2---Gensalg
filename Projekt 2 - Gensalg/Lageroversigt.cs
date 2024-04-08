@@ -342,6 +342,37 @@ namespace Projekt_2___Gensalg
             }
         }
 
+        public void SearchForRequest()
+        {
+            if (!File.Exists("RequestList.txt")) // tjekker om forespørgselslistefilen ikke eksisterer endnu og opretter den
+            {
+                CreateInventoryOrRequestList("InventoryList.txt");
+            }
+            else // starter søgefunktion hvis forespørgselslistefilen eksisterer
+            {
+                List<string> lines = new List<string>(File.ReadAllLines("RequestList.txt")); // opretter en liste som indlæser indhold i forespørgsel tekstfilen til listen
+
+                Console.WriteLine("Indtast søgeord");
+                string searchWord = Console.ReadLine();
+                bool anyElementFound = false; // fortæller om søgningen har givet nogen resultater
+
+                Console.WriteLine("\n\nHer er søgeresultaterne:\n");
+                for (int i = 0; i < lines.Count; i++) // søger gennem de indlæste linjer fra forespørgselslistefilen og udskriver de linjer, der indeholder søgeordet, til konsolvinduet
+                {
+                    if (lines[i].Contains(searchWord, StringComparison.OrdinalIgnoreCase)) // OrdinalIgnoreCase sørger for, at den ignorerer forskel på små og store bogstaver
+                    {
+                        Console.WriteLine(lines[i] + "\n\n");
+                        anyElementFound = true; // giver besked om, at der er matchende søgeresultater
+                    }
+                }
+
+                if (!anyElementFound) // tjekker om søgningen har givet 0 resultater og giver besked, hvis det er tilfældet
+                {
+                    Console.WriteLine("Søgningen gav ingen resultater\n\n");
+                }
+            }
+        }
+
 
 
         // Metode til at finde et spil i lageroversigten baseret på navn
