@@ -8,21 +8,10 @@ namespace Projekt_2___Gensalg
 {
     internal class Lageroversigt
     {
-        private List<Spil> spilILager; // En liste over spil i lageret - ** bruges ikke længere, slettes?
-        private List<string> Forespørgsel = new List<string>(); // - ** bruges ikke længere, slettes?
-
-
-
-        public Lageroversigt() // - ** bruges ikke længere, slettes?
-        {
-            spilILager = new List<Spil>(); // Initialiserer listen over spil i lageret
-
-        }
-        // Metoder til at håndtere lageroversigten
-
         public void CreateInventoryOrRequestList(string fileName) // opretter en fil til lagerlisten 
         {
             string listName = "";
+
             if (fileName == "InventoryList.txt")
             {
                 listName = "Lagerlisten";
@@ -40,7 +29,8 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public void TilføjSpil() 
+
+        public void TilføjSpil()
         {
             if (!File.Exists("InventoryList.txt")) // Tjekker om der er oprettet en fil til lagerlisten, og opretter filen hvis den ikke findes i forvejen
             {
@@ -60,8 +50,10 @@ namespace Projekt_2___Gensalg
                 }
                 outputFile.WriteLine(myString);
             }
+
             Console.WriteLine($"\nSpillet '{myString}' er blevet tilføjet til lageroversigten.");
         }
+
 
         public void EditGame()
         {
@@ -98,6 +90,7 @@ namespace Projekt_2___Gensalg
                 else // udføres hvis søgningen har givet resultater
                 {
                     Console.WriteLine("\nSkriv tallet ud for det spil, du ønsker at redigere");
+
                     if (!int.TryParse(Console.ReadLine(), out j)) // denne if blok tjekker om brugeren træffer et acceptabelt valg
                     {
                         Console.WriteLine("\n\nDu har tastet forkert");
@@ -130,6 +123,7 @@ namespace Projekt_2___Gensalg
                                     }
 
                                 }
+
                                 Console.WriteLine($"\nSpillet '{lines[i]}' er blevet opdateret.");
                                 correctChoice = true; // bekræfter at brugeren har truffet et acceptabelt valg, så loopet kan stoppe
                             }
@@ -138,6 +132,7 @@ namespace Projekt_2___Gensalg
                 }
             }
         }
+
 
         public void DeleteGame()
         {
@@ -205,6 +200,7 @@ namespace Projekt_2___Gensalg
                                         outputFile.WriteLine(line);
                                     }
                                 }
+
                                 Console.WriteLine($"\nSpillet '{deletedGame}' er blevet slettet.");
                                 correctChoice = true; // bekræfter at brugeren har truffet et acceptabelt valg, så loopet kan stoppe
                             }
@@ -214,16 +210,8 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public List<Spil> RetunerListe() // - ** bruges ikke længere, slettes?
-        {
-            return spilILager;
-        }
 
-        public void FjernSpil(Spil spil) // ** bruges ikke
-        {
-            spilILager.Remove(spil); // Fjern et spil fra lageroversigten
-        }
-        public void VisLageroversigt() 
+        public void VisLageroversigt()
         {
             if (!File.Exists("InventoryList.txt")) // tjekker om lagerlistefilen eksisterer og opretter den hvis ikke den eksisterer, samt giver brugeren besked om at listen er tom
             {
@@ -250,7 +238,7 @@ namespace Projekt_2___Gensalg
         }
 
 
-        public void SøgEfterSpil() 
+        public void SøgEfterSpil()
         {
             if (!File.Exists("InventoryList.txt")) // tjekker om lagerlistefilen ikke eksisterer endnu og opretter den
             {
@@ -259,10 +247,10 @@ namespace Projekt_2___Gensalg
             else // starter søgefunktion hvis lagerlistefilen eksisterer
             {
                 List<string> lines = new List<string>(File.ReadAllLines("InventoryList.txt")); // opretter en liste som indlæser indhold i lager tekstfilen til listen
+                bool anyElementFound = false; // fortæller om søgningen har givet nogen resultater
 
                 Console.WriteLine("Indtast søgeord");
                 string searchWord = Console.ReadLine();
-                bool anyElementFound = false; // fortæller om søgningen har givet nogen resultater
 
                 Console.WriteLine("\n\nHer er søgeresultaterne:\n");
                 for (int i = 0; i < lines.Count; i++) // søger gennem de indlæste linjer fra lagerlistefilen og udskriver de linjer der indeholder søgeordet til konsolvinduet
@@ -281,18 +269,9 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public void UdskrivLager() // - ** bruges ikke længere, slettes?
-        {
-            Console.WriteLine("Lageroversigt:");
-            foreach (var spil in spilILager)
-            {
-                Console.WriteLine(spil.Navn); // Udskriv navnet på hvert spil i lageroversigten
-            }
-        }
 
-        public void Opretforespørgsel() 
+        public void Opretforespørgsel()
         {
-
             if (!File.Exists("RequestList.txt")) // Tjekker om der er oprettet en fil til forespørgselslisten, og opretter filen hvis den ikke findes i forvejen
             {
                 CreateInventoryOrRequestList("RequestList.txt");
@@ -311,8 +290,10 @@ namespace Projekt_2___Gensalg
                 }
                 outputFile.WriteLine(myString);
             }
+
             Console.WriteLine($"\n\nForespørgslen '{myString}' er blevet tilføjet til listen over forespørgsler.\n");
         }
+
 
         public void EditRequest()
         {
@@ -381,6 +362,7 @@ namespace Projekt_2___Gensalg
                                     }
 
                                 }
+
                                 Console.WriteLine($"\nForespørgslen '{lines[i]}' er blevet opdateret.");
                                 correctChoice = true; // bekræfter at brugeren har truffet et acceptabelt valg, så loopet kan stoppe
                             }
@@ -390,6 +372,7 @@ namespace Projekt_2___Gensalg
             }
         }
 
+
         public void DeleteRequest()
         {
             List<string> lines = new List<string>(File.ReadAllLines("RequestList.txt")); // der oprettes en liste som indlæser indhold i forespørgsel tekstfilen til listen
@@ -397,6 +380,7 @@ namespace Projekt_2___Gensalg
             int j = 0; // bruges til at give et nummer til hver af de linjer der indeholder søgeordet
             bool anyElementFound = false; // fortæller om søgningen har givet nogen resultater
             bool correctChoice = false; // sikrer, at brugeren træffer et acceptabelt valg
+            
 
             Console.WriteLine("Skriv navnet på den forespørgsel, du ønsker at slette");
             string searchWord = Console.ReadLine();
@@ -425,6 +409,7 @@ namespace Projekt_2___Gensalg
                 else // udføres hvis søgningen har givet resultater
                 {
                     Console.WriteLine("\nSkriv tallet ud for den forespørgsel, du ønsker at slette");
+
                     if (!int.TryParse(Console.ReadLine(), out j)) // denne if blok tjekker, om brugeren træffer et acceptabelt valg
                     {
                         Console.WriteLine("\n\nDu har tastet forkert");
@@ -457,6 +442,7 @@ namespace Projekt_2___Gensalg
                                     }
 
                                 }
+
                                 Console.WriteLine($"\nForespørgslen '{deletedRequest}' er blevet slettet.");
                                 correctChoice = true; // bekræfter at brugeren har truffet et acceptabelt valg, så loopet kan stoppe
                             }
@@ -466,7 +452,8 @@ namespace Projekt_2___Gensalg
             }
         }
 
-        public void VisForespoergsler() 
+
+        public void VisForespoergsler()
         {
             if (!File.Exists("RequestList.txt")) // tjekker om forespørgselslistefilen eksisterer og opretter den hvis ikke den eksisterer, samt giver brugeren besked om at listen er tom
             {
@@ -487,12 +474,11 @@ namespace Projekt_2___Gensalg
                     foreach (string line in lines) // udskriver arrayet med indholdet fra forespørgselslistefilen til konsolvinduet
                     {
                         Console.WriteLine(line + "\n");
-                    }
-
-                    Console.WriteLine("");
+                    }                    
                 }
             }
         }
+
 
         public void SearchForRequest()
         {
@@ -524,14 +510,5 @@ namespace Projekt_2___Gensalg
                 }
             }
         }
-
-
-
-        // Metode til at finde et spil i lageroversigten baseret på navn
-        public Spil FindSpil(string navn) // ** ikke nødvendig da der er en anden metode til spil søgning?
-        {
-            return spilILager.FirstOrDefault(spil => spil.Navn == navn);
-        }
-
     }
 }
