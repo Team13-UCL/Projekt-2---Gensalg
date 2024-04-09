@@ -12,7 +12,11 @@ namespace Projekt_2___Gensalg
 
             Lageroversigt lageroversigt = new Lageroversigt();
 
-            
+            //Console.ForegroundColor: Ændrer konsollens forgrundsfarve.
+
+            //Console.BackgroundColor: Ændrer konsollens baggrundsfarve.
+
+            //Console.Title
 
             while (endProgram == false)
             {

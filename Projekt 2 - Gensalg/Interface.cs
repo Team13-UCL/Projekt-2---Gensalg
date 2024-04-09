@@ -11,19 +11,33 @@ namespace Projekt_2___Gensalg
         private int chosenFunction; // brugerens valg i menuen registreres i denne int
         private string menuTitle = "Menu for lagersystemet"; // menutitel
         private string askUserChoice = "\n\n\tVælg hvilken funktion, du ønsker at benytte og tryk enter"; // besked til brugeren, når menuen starter
-        private string[] menuItems = { "1. Vis/Print lagerliste", "2. Søg efter spil", "3. Opret spil ", "4. Rediger spil", "5. Slet spil", "6. Vis liste over forespørgsler", "7. Søg efter forespørgsel", "8. Opret forespørgsel", "9. Rediger forespørgsel", "10. Slet forespørgsel", "11. Afslut Program\n" }; // denne array indeholder menupunkterne
-
+        private string[] menuItems = { "1. Vis/Print lagerliste", "6. Vis liste over forespørgsler", "2. Søg efter spil", "\t 7. Søg efter forespørgsel", "3. Opret spil", "\t\t 8. Opret forespørgsel", "4. Rediger spil", "\t 9. Rediger forespørgsel", "5. Slet spil", "\t\t10. Slet forespørgsel", "11. Afslut Program\n" }; // denne array indeholder menupunkterne
+        
         
         public void ShowMenu()
         {
-            Console.Clear();
-            Console.WriteLine("\t" + menuTitle);
+            
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
 
-            for (int i = 0; i < menuItems.Length; i++)
+            Console.Clear();
+            
+            Console.WriteLine("\t\t\t" + menuTitle);
+
+            for (int i = 0; i < menuItems.Length; i += 2) 
             {
-                Console.WriteLine("\n\t" + menuItems[i]);
+                if (i < menuItems.Length - 1) // for at den ikke komme udenfor arrayen
+                    Console.WriteLine($"{menuItems[i]} \t\t\t {menuItems[i + 1]}");
+                else
+                    Console.WriteLine($"\t\t\t{menuItems[10]}");
             }
-     
+
+            //gammel menu, skal nok slettes :D
+            //for (int i = 0; i < menuItems.Length; i++)
+            //{
+            //    Console.WriteLine("\n\t" + menuItems[i]);
+            //}
+
             Console.WriteLine(askUserChoice);
         }
 
