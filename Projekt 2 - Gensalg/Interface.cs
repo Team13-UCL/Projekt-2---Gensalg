@@ -26,17 +26,12 @@ namespace Projekt_2___Gensalg
 
             for (int i = 0; i < menuItems.Length; i += 2) 
             {
-                if (i < menuItems.Length - 1) // for at den ikke komme udenfor arrayen 
+                if (i < menuItems.Length - 1) // for at den ikke komme udenfor arrayen
                     Console.WriteLine($"{menuItems[i]} \t\t\t {menuItems[i + 1]}");
                 else
-                    Console.WriteLine($"\t\t\t{menuItems[10]}"); 
-            } 
+                    Console.WriteLine($"\t\t\t{menuItems[10]}");
+            }
 
-            //gammel menu, skal nok slettes :D ** SLET
-            //for (int i = 0; i < menuItems.Length; i++)
-            //{
-            //    Console.WriteLine("\n\t" + menuItems[i]);
-            //}
 
             Console.WriteLine(askUserChoice);
         }
