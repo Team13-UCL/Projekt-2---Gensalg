@@ -8,16 +8,13 @@ namespace Projekt_2___Gensalg
         {
             bool endProgram = false; // bruges til at tjekke om menu-loopet skal stoppe og programmet afsluttes
 
-            Interface menu = new Interface();
+            Interface menu = new Interface();            
 
-            Lageroversigt lageroversigt = new Lageroversigt();
+            Game game = new Game();
 
-            //Console.ForegroundColor: Ændrer konsollens forgrundsfarve.
+            Request request = new Request();
 
-            //Console.BackgroundColor: Ændrer konsollens baggrundsfarve.
-
-            //Console.Title
-
+            
             while (endProgram == false)
             {
                 menu.ShowMenu(); // viser menuen
@@ -29,34 +26,34 @@ namespace Projekt_2___Gensalg
                 switch (menu.GetChosenFunction()) // henter brugerens menuvalg og aktiverer menuvalget
                 {
                     case 1:
-                        lageroversigt.VisLageroversigt(); // Viser bare vores Lager liste
+                        game.ShowInventory(); // Viser bare vores Lager liste
                         break;
                     case 2:
-                        lageroversigt.SøgEfterSpil(); // Søger efter det søgte navn på vores lagerliste
+                        game.SearchForGame(); // Søger efter det søgte navn på vores lagerliste
                         break;
                     case 3:
-                        lageroversigt.TilføjSpil(); // Tilføjer spillet til lageroversigten                            
+                        game.AddGame(); // Tilføjer spillet til lageroversigten                            
                         break;                        
                     case 4:
-                        lageroversigt.EditGame();
+                        game.EditGame();
                         break;                        
                     case 5:
-                        lageroversigt.DeleteGame();
+                        game.DeleteGame();
                         break;
                     case 6:
-                        lageroversigt.VisForespoergsler(); // Viser listen over forespørgelserne
+                        request.ShowRequests(); // Viser listen over forespørgelserne
                         break;
                     case 7:
-                        lageroversigt.SearchForRequest();
+                        request.SearchForRequest();
                         break;                        
                     case 8:
-                        lageroversigt.Opretforespørgsel(); // tilføjer vores forespørgsel til vores lager 
+                        request.CreateRequest(); // tilføjer vores forespørgsel til vores lager 
                         break;
                     case 9:
-                        lageroversigt.EditRequest();
+                        request.EditRequest();
                         break;
                     case 10:
-                        lageroversigt.DeleteRequest();
+                        request.DeleteRequest();
                         break;
                     case 11:
                         Console.WriteLine("Nu afsluttes programmet");

@@ -32,11 +32,6 @@ namespace Projekt_2___Gensalg
                     Console.WriteLine($"\t\t\t{menuItems[10]}");
             }
 
-            //gammel menu, skal nok slettes :D
-            //for (int i = 0; i < menuItems.Length; i++)
-            //{
-            //    Console.WriteLine("\n\t" + menuItems[i]);
-            //}
 
             Console.WriteLine(askUserChoice);
         }
