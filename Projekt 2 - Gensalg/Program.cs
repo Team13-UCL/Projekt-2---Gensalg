@@ -10,13 +10,7 @@ namespace Projekt_2___Gensalg
 
             Interface menu = new Interface();
 
-            Lageroversigt lageroversigt = new Lageroversigt();
-
-            //Console.ForegroundColor: Ændrer konsollens forgrundsfarve.
-
-            //Console.BackgroundColor: Ændrer konsollens baggrundsfarve.
-
-            //Console.Title
+            Lageroversigt lageroversigt = new Lageroversigt();            
 
             while (endProgram == false)
             {
